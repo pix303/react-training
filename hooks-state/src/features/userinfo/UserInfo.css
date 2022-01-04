@@ -1,0 +1,15 @@
+fieldset {
+  border: 0px;
+}
+
+label {
+  width: 5em;
+  margin-right: 0.3em;
+  display: inline-block;
+}
+
+input {
+  width: 10em;
+  border: 0px;
+  border-bottom: 1px grey solid;
+}
