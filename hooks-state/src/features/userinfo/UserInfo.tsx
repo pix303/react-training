@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { isError } from "util";
 import "./UserInfo.css";
 
 export const UserInfo = () => {
