@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 export const Counter = () => {
   // set init value of counter
   const [count, setCount] = useState<number>(5);
@@ -12,12 +11,23 @@ export const Counter = () => {
   };
 
   return (
-    <div>
-      <h3>Counter: {count}</h3>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <button onClick={() => setCount(0)}>R</button>
-      <button onClick={() => setCount(count - 1)}>-</button>
-      <button onClick={() => incrementTenTimes()}>+10</button>
+    <div data-testid="counter">
+      <h3 data-testid="counter-feedback">Counter: {count}</h3>
+      <button aria-label="increment-button" onClick={() => setCount(count + 1)}>
+        +
+      </button>
+      <button aria-label="reset-button" onClick={() => setCount(0)}>
+        R
+      </button>
+      <button aria-label="decrement-button" onClick={() => setCount(count - 1)}>
+        -
+      </button>
+      <button
+        aria-label="increment-10-times-button"
+        onClick={() => incrementTenTimes()}
+      >
+        +10
+      </button>
     </div>
   );
 };

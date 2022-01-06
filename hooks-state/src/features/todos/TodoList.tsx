@@ -2,10 +2,10 @@ import { useRef, useState } from "react";
 
 export const TodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const titleInput = useRef<HTMLInputElement>(null);
+  const [title, setTitle] = useState("test");
 
   const addTodo = () => {
-    setTodos([...todos, { title: titleInput.current?.value, complete: false }]);
+    setTodos([...todos, { title: title, complete: false }]);
   };
 
   const addTodoBatch = () => {
@@ -14,7 +14,7 @@ export const TodoList = () => {
 
       for (let i = 0; i < 10; i++) {
         result.push({
-          title: titleInput.current?.value + " " + (i + 1),
+          title: title + " " + (i + 1),
           complete: false,
         });
       }
@@ -23,11 +23,21 @@ export const TodoList = () => {
   };
 
   return (
-    <div>
-      <input type="text" ref={titleInput} />
-      <button onClick={addTodo}>Add todo</button>
-      <button onClick={addTodoBatch}>Add counted todo</button>
-      <ul>
+    <div data-testid="todo-list">
+      <input
+        data-testid="todo-list-input"
+        type="text"
+        onChange={(e) => {
+          setTitle(e.target.value);
+        }}
+      />
+      <button aria-label="add-button" onClick={addTodo}>
+        Add todo
+      </button>
+      <button aria-label="add-batch-button" onClick={addTodoBatch}>
+        Add counted todo
+      </button>
+      <ul data-testid="todo-item-list">
         {todos.map((todo, i) => (
           <li key={i}>{todo.title}</li>
         ))}
