@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import SecondsCounter from "./features/counter/SecondsCounter";
 import MouseTracker from "./features/mouse-tracker/MouseTracker";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         </button>
       </header>
       {displayComp && <MouseTracker />}
+      <SecondsCounter />
     </div>
   );
 }
