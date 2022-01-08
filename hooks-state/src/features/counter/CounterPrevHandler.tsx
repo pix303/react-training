@@ -1,5 +1,5 @@
 import { useState } from "react";
-export const CounterFunctional = () => {
+export const CounterPrevHandler = () => {
   // set init value of counter by
   const [count, setCount] = useState<number>(() => {
     console.log("init state");
