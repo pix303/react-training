@@ -3,10 +3,12 @@ export const Counter = () => {
   // set init value of counter
   const [count, setCount] = useState<number>(5);
 
-  // increment by function in order to closure previous value and preserve for rendering
+  // increment by function in order to closure previous value in the loop
   const incrementTenTimes = () => {
     for (let i = 0; i < 10; i++) {
-      setCount((prevCount) => prevCount + 1);
+      setCount((prevCount: number): number => {
+        return prevCount + 1;
+      });
     }
   };
 
