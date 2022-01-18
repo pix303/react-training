@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import SecondsCounter from "./features/counter/SecondsCounter";
 import MouseTracker from "./features/mouse-tracker/MouseTracker";
+import Posts from "./features/posts/Posts";
 
 function App() {
   const [displayComp, setDisplayComp] = useState<boolean>(true);
@@ -19,6 +20,7 @@ function App() {
       </header>
       {displayComp && <MouseTracker />}
       <SecondsCounter />
+      <Posts />
     </div>
   );
 }
