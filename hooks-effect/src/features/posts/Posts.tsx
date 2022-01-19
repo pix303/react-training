@@ -13,6 +13,7 @@ function Posts() {
   // to avoid update render after element is unmounted
   const isMounted = useIsMounted();
 
+  // functions to call api
   const fetchAll = async () => {
     const res = await new PostService().getAll();
     if (isMounted()) {
@@ -26,10 +27,12 @@ function Posts() {
     }
   };
 
+  // init effect
   useEffect(() => {
     fetchAll();
   }, []);
 
+  // effect triggered by isSending state
   useEffect(() => {
     if (isSending) {
       if (!!currentId) {
