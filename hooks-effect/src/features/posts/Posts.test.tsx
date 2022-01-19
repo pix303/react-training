@@ -20,6 +20,7 @@ describe("Posts unit test", () => {
       { id: 1, title: "test", body: "test", userId: 1 },
       { id: 2, title: "test", body: "test", userId: 1 },
       { id: 3, title: "test", body: "test", userId: 1 },
+      { id: 4, title: "test", body: "test", userId: 1 },
     ],
   };
 
@@ -36,10 +37,14 @@ describe("Posts unit test", () => {
 
     render(<Posts />);
 
+    await waitFor(() => {
+      expect(mockedAxios.get).toHaveBeenCalledTimes(1);
+    });
+
     const postsList = screen.getByTestId("posts-list");
 
-    const postsListItems = await within(postsList).findAllByRole("listitem");
-    expect(postsListItems.length).toBe(3);
+    const postsListItems = within(postsList).getAllByRole("listitem");
+    expect(postsListItems.length).toBe(4);
   });
 
   it("should retrive one post", async () => {
