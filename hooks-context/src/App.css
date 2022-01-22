@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+.context-block {
+  border: 0.2em seagreen solid;
+  margin: 1em;
+  width: 50%;
+  padding: 1em;
+}
