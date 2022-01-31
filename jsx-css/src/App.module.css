@@ -1,0 +1,3 @@
+.bg {
+  @apply bg-red-50 text-sky-500;
+}
