@@ -3,6 +3,7 @@ import "./AppGlobal.css";
 import { Greeting } from "./feature/greeting/Greeting";
 import GreetingTilewind from "./feature/greeting-tailwin/GreetingTilewind";
 import EventHandler from "./feature/events/EventHandler";
+import Card from "./feature/card/Card";
 
 function App() {
   return (
@@ -23,6 +24,25 @@ function App() {
         text="Hello"
       ></GreetingTilewind>
       <EventHandler />
+
+      <div className="p-10 m-10">
+        <Card
+          title="first card"
+          bgColor="bg-red-500"
+          borderColor="border-red-500"
+        >
+          <p>children content</p>
+        </Card>
+        <Card
+          title="second card"
+          bgColor="bg-green-500"
+          borderColor="border-green-500"
+        >
+          <p>children content</p>
+          <p>children content</p>
+          <p>children content</p>
+        </Card>
+      </div>
     </div>
   );
 }
